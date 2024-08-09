@@ -35,20 +35,22 @@
     </div>
 
     <div class="h-full w-full">
-      <div class="mt-5 flex items-center justify-between p-2">
+      <div  *ngFor="let todo of todos" class="mt-5 flex items-center justify-between p-2">
         <div class="flex items-center justify-center gap-2">
           <input
+            [(ngModel)]="todo.active"
             type="checkbox"
-            class="defaultCheckbox relative flex h-[20px] min-h-[20px] w-[20px] min-w-[20px] appearance-none items-center justify-center rounded-md border border-gray-300 text-white/0 outline-none transition duration-[0.2s] checked:border-none checked:text-white hover:cursor-pointer checked:bg-brand-500"
+            (click)="onToggleTask(todo.id)"
+            class="defaultCheckbox relative flex h-[20px] min-h-[20px] w-[20px] min-w-[20px] appearance-none items-center justify-center rounded-md border border-gray-300 text-white/0 outline-none transition duration-[0.2s] checked:border-none checked:text-blue-500 hover:cursor-pointer checked:bg-blue-500"
             name="weekly"
           />
-          <p class="text-base font-bold text-navy-700">Landing Page Design</p>
+          <p class="text-base font-bold text-navy-700">{{todo.title}}</p>
         </div>
-        <span
-          class="material-symbols-rounded h-6 w-6 text-navy-700 cursor-pointer"
+        <img
+          *ngIf="!todo.active"
+          src="../../../../../assets/icons/trash-icon.svg" width="25" alt="trash-icon" class="cursor-pointer"
+          (click)="onDeleteTask(todo.id)"
         >
-          <!-- drag_indicator -->
-        </span>
       </div>
     </div>
   </div>

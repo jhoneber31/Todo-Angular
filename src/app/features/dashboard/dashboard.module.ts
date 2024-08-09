@@ -7,6 +7,7 @@ import { LayoutPageComponent } from './pages/layout-page/layout-page.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { TopMenuComponent } from './components/top-menu/top-menu.component';
 import { InputFormComponent } from './components/input-form/input-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,7 +20,9 @@ import { InputFormComponent } from './components/input-form/input-form.component
   ],
   imports: [
     CommonModule,
-    DashboardRoutingModule
+    DashboardRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class DashboardModule { }
