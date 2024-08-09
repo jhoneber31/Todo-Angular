@@ -9,9 +9,11 @@ import { addTodo } from '../../../../core/store/actions/todo.actions';
 })
 export class InputFormComponent {
   private fb = inject(FormBuilder);
-  public myForm:FormGroup = this.fb.group({
-    titleTask: ['', [Validators.required]],
-  })
+
+
+  public myForm: FormGroup = this.fb.group({
+    titleTask: ['', [Validators.required, Validators.pattern('^[a-zA-Z0-9]*$')]],
+  });
 
   constructor(private store: Store) {}
 

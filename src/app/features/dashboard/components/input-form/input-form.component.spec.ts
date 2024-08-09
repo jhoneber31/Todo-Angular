@@ -11,7 +11,7 @@ describe('InputFormComponent', () => {
       declarations: [InputFormComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(InputFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
