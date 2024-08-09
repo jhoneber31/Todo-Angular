@@ -6,16 +6,16 @@ import { selectAuth } from "../store/selectors/auth.selectors";
 
 export const isAuthenticatedGuard: CanActivateFn = (route, state) => {
 
-  // const store = inject(Store);
-  // const router = inject(Router);
+  const store = inject(Store);
+  const router = inject(Router);
 
-  // return store.select(selectAuth).pipe(
-  //   map(authState => authState.status === 'authenticated'),
-  //   tap(isAuthenticated => {
-  //     if (!isAuthenticated) {
-  //       router.navigate(['/login']);
-  //     }
-  //   })
-  // );
+  return store.select(selectAuth).pipe(
+    map(authState => authState.status === 'authenticated'),
+    tap(isAuthenticated => {
+      if (!isAuthenticated) {
+        router.navigate(['/login']);
+      }
+    })
+  );
   return true;
 };

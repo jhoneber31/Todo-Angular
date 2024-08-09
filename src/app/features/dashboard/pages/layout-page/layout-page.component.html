@@ -1,4 +1,4 @@
-<app-sidebar [ngClass]="{'block fixed z-[100]': isSidebarOpen, 'hidden lg:flex': !isSidebarOpen}"></app-sidebar>
+<app-sidebar class="animate__animated animate__fadeInLeft" [ngClass]="{'block fixed z-[100]': isSidebarOpen, 'hidden lg:flex': !isSidebarOpen}"></app-sidebar>
 <div
   [ngClass]="{'w-screen h-screen fixed z-[90] bg-black bg-opacity-50 top-0 left-0 lg:hidden': isSidebarOpen, 'hidden': !isSidebarOpen}"
   (click)="toggleSidebar()"></div>

@@ -6,7 +6,6 @@ import { addTodo } from '../../../../core/store/actions/todo.actions';
 @Component({
   selector: 'app-input-form',
   templateUrl: './input-form.component.html',
-  styleUrl: './input-form.component.css'
 })
 export class InputFormComponent {
   private fb = inject(FormBuilder);

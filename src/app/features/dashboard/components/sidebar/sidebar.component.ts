@@ -9,7 +9,6 @@ import { logoutUser } from '../../../../core/store/actions/auth.actions';
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
-  styleUrl: './sidebar.component.css'
 })
 export class SidebarComponent implements OnInit {
 
