@@ -11,8 +11,10 @@ import { IAuth } from '../../core/interfaces/auth.interface';
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
+
   private fb = inject(FormBuilder);
   private router = inject(Router);
+  public alert: boolean = false;
 
   public myForm:FormGroup = this.fb.group({
     user: ['', [Validators.required]],
@@ -24,20 +26,22 @@ export class LoginComponent {
   login() {
     const { user:userName, password } = this.myForm.value;
 
+    this.alert = false;
+
     this.store.dispatch(checkingUser());
 
     if (userName === 'test01' && password === 'test01') {
       const authUser: IAuth = {
         userName,
         password,
-        uid: '1',
+        uid: '72094320',
         status: 'authenticated'
       };
       this.store.dispatch(loginUser({user: authUser}));
       this.router.navigate(['/dashboard']);
     } else {
-      console.error('Error: Credenciales incorrectas');
       this.store.dispatch(logoutUser());
+      this.alert = true;
     }
   }
 }

@@ -20,7 +20,7 @@
           <input
             class="font-medium text-[16px] text-[#333333] block w-full h-[50px] bg-transparent px-[7px] border-none outline-none"
             type="text"
-            placeholder="Ingrese nombre de usuario"
+            placeholder="Your username"
             formControlName="user"
           />
           <span
@@ -32,17 +32,17 @@
           <input
             class="font-medium text-[16px] text-[#333333] block w-full h-[50px] bg-transparent px-[7px] border-none outline-none"
             type="password"
-            placeholder="Ingrese su contraseña"
+            placeholder="Your password"
             formControlName="password"
           />
-          <span
-            class="absolute block w-full h-full top-0 left-0 pointer-events-none"
-          ></span>
         </div>
-        <div class="flex flex-wrap justify-center">
+        <span *ngIf="alert" class="text-[12px] text-red-500 mt-2" >
+          Credentials incorrect, please try again.
+        </span>
+        <div class="flex flex-wrap justify-center mt-6">
           <div class="w-full block relative z-10 rounded-3xl overflow-hidden">
             <button
-              class="text-[16px] text-[#fff] uppercase flex justify-center items-center px-[20px] w-full h-[50px] bg-[#60cfdc] button-gradient cursor-pointer"
+              class="text-[16px] text-[#fff] uppercase flex justify-center items-center px-[20px] w-full h-[50px] bg-[#60cfdc] cursor-pointer disabled:bg-opacity-55"
               type="submit"
               [disabled]="myForm.invalid"
             >

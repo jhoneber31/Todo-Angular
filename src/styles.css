@@ -35,6 +35,3 @@ body, html {
   font-family: Poppins-Regular, sans-serif;
 }
 
-.button-gradient {
-  background: linear-gradient(90deg, rgba(96,207,220,1) 0%, rgba(190,52,218,1) 92%);
-}
