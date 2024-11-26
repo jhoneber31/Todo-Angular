@@ -12,7 +12,7 @@ export class InputFormComponent {
 
 
   public myForm: FormGroup = this.fb.group({
-    titleTask: ['', [Validators.required, Validators.pattern('^[a-zA-Z0-9]*$')]],
+    titleTask: ['', [Validators.required]],
   });
 
   constructor(private store: Store) {}
